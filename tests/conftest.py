@@ -17,7 +17,7 @@ from typing import NamedTuple
 import freezegun
 import pytest
 
-import loguru
+import loggerex
 
 if sys.version_info < (3, 5, 3):
 
@@ -105,7 +105,7 @@ def set_event_loop_context(loop):
 
 
 def parse(text, *, strip=False, strict=True):
-    parser = loguru._colorizer.AnsiParser()
+    parser = loggerex._colorizer.AnsiParser()
     parser.feed(text)
     tokens = parser.done(strict=strict)
 
@@ -191,11 +191,11 @@ def check_env_variables():
 @pytest.fixture(autouse=True)
 def reset_logger():
     def reset():
-        loguru.logger.remove()
-        loguru.logger.__init__(
-            loguru._logger.Core(), None, 0, False, False, False, False, True, [], {}
+        loggerex.logger.remove()
+        loggerex.logger.__init__(
+            loggerex._logger.Core(), None, 0, False, False, False, False, True, [], {}
         )
-        loguru._logger.context.set({})
+        loggerex._logger.context.set({})
 
     reset()
     yield
@@ -316,8 +316,8 @@ def freeze_time(monkeypatch):
             context.setitem(fakes, "include_tm_zone", include_tm_zone)
             context.setitem(fakes, "tm_gmtoff_override", tm_gmtoff_override)
 
-            context.setattr(loguru._file_sink, "get_ctime", ctimes.__getitem__)
-            context.setattr(loguru._file_sink, "set_ctime", ctimes.__setitem__)
+            context.setattr(loggerex._file_sink, "get_ctime", ctimes.__getitem__)
+            context.setattr(loggerex._file_sink, "set_ctime", ctimes.__setitem__)
             context.setattr(builtins, "open", patched_open)
 
             # Freezegun does not permit to override timezone name.
@@ -349,7 +349,7 @@ def make_logging_logger(name, handler, fmt="%(message)s", level="DEBUG"):
 
 def _simulate_f_globals_name_absent(monkeypatch):
     """Simulate execution in Dask environment, where "__name__" is not available in globals."""
-    getframe_ = loguru._get_frame.load_get_frame_function()
+    getframe_ = loggerex._get_frame.load_get_frame_function()
 
     def patched_getframe(*args, **kwargs):
         frame = getframe_(*args, **kwargs)
@@ -357,7 +357,7 @@ def _simulate_f_globals_name_absent(monkeypatch):
         return frame
 
     with monkeypatch.context() as context:
-        context.setattr(loguru._logger, "get_frame", patched_getframe)
+        context.setattr(loggerex._logger, "get_frame", patched_getframe)
         yield
 
 
@@ -368,7 +368,7 @@ def _simulate_no_frame_available(monkeypatch):
         raise ValueError("Call stack is not deep enough (dummy)")
 
     with monkeypatch.context() as context:
-        context.setattr(loguru._logger, "get_frame", patched_getframe)
+        context.setattr(loggerex._logger, "get_frame", patched_getframe)
         yield
 
 

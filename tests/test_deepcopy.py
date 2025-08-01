@@ -1,6 +1,6 @@
 import copy
 
-from loguru import logger
+from loggerex import logger
 
 
 def print_(message):

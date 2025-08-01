@@ -1,7 +1,7 @@
 import re
 
-import loguru._recattrs as recattrs
-from loguru import logger
+import loggerex._recattrs as recattrs
+from loggerex import logger
 
 
 def test_patch_record_file(writer):

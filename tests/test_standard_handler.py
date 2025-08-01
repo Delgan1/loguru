@@ -3,7 +3,7 @@ from logging import FileHandler, Formatter, Handler, NullHandler, StreamHandler
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 def test_stream_handler(capsys):

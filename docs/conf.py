@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 # -- Project information -----------------------------------------------------
 
-project = "loguru"
+project = "loggerex"
 copyright = "2018, Delgan"
 author = "Delgan"
 
@@ -131,14 +131,14 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [(master_doc, "loguru.tex", "loguru Documentation", "Delgan", "manual")]
+latex_documents = [(master_doc, "loggerex.tex", "loggerex Documentation", "Delgan", "manual")]
 
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "loguru", "loguru Documentation", [author], 1)]
+man_pages = [(master_doc, "loggerex", "loggerex Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -149,10 +149,10 @@ man_pages = [(master_doc, "loguru", "loguru Documentation", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "loguru",
-        "loguru Documentation",
+        "loggerex",
+        "loggerex Documentation",
         author,
-        "loguru",
+        "loggerex",
         "One line description of project.",
         "Miscellaneous",
     )
@@ -161,7 +161,7 @@ texinfo_documents = [
 
 # -- Extension configuration -------------------------------------------------
 
-html_context = {"github_user": "delgan", "github_repo": "loguru"}
+html_context = {"github_user": "delgan", "github_repo": "loggerex"}
 
 add_module_names = False
 autodoc_member_order = "bysource"
@@ -179,5 +179,5 @@ suppress_warnings = ["myst.header"]
 
 def setup(app):
     """Configure the generation of docs."""
-    app.add_css_file("css/loguru.css")
+    app.add_css_file("css/loggerex.css")
     app.add_js_file("js/copybutton.js")

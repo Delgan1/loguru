@@ -1,6 +1,6 @@
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 def test_file_mode_a(tmp_path):

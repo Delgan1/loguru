@@ -1,6 +1,6 @@
 import sys
 
-from loguru import logger
+from loggerex import logger
 
 
 def test(diagnose, backtrace):

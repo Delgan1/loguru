@@ -3,7 +3,7 @@ import sys
 import _init
 from somelib import callme, divide
 
-from loguru import logger
+from loggerex import logger
 
 
 def test(*, backtrace, colorize, diagnose):

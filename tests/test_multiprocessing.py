@@ -8,7 +8,7 @@ import time
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import new_event_loop_context
 

@@ -5,7 +5,7 @@ import time
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import default_threading_excepthook
 

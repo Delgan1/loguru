@@ -1,4 +1,4 @@
-from loguru import logger
+from loggerex import logger
 
 
 def test_patch_after_add(writer):

@@ -41,7 +41,7 @@ description = "Python logging made (stupidly) simple"
 dynamic = ['version']
 keywords = ["loguru", "logging", "logger", "log"]
 license = { file = "LICENSE" }
-name = "loguru"
+name = "loggerex"
 readme = 'README.md'
 requires-python = ">=3.5,<4.0"
 
@@ -100,7 +100,7 @@ target-version = ["py35"]
 typeCheckingMode = "off"
 
 [tool.flit.module]
-name = "loguru"
+name = "loggerex"
 
 [tool.pytest.ini_options]
 addopts = "-l"

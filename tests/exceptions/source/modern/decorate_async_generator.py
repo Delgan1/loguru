@@ -1,4 +1,4 @@
-from loguru import logger
+from loggerex import logger
 import asyncio
 import sys
 

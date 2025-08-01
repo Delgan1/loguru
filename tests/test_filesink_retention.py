@@ -4,7 +4,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import check_dir
 

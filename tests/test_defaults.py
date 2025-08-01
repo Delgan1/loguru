@@ -1,6 +1,6 @@
 import pytest
 
-from loguru._defaults import env
+from loggerex._defaults import env
 
 
 @pytest.mark.parametrize("value", ["test", ""])

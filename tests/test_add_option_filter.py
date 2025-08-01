@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 @pytest.mark.parametrize(

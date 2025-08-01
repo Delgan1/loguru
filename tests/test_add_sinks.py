@@ -6,7 +6,7 @@ import sys
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 message = "test message"
 expected = message + "\n"

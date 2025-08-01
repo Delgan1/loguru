@@ -2,7 +2,7 @@ import json
 import re
 import sys
 
-from loguru import logger
+from loggerex import logger
 
 
 class JsonSink:

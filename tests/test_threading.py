@@ -2,7 +2,7 @@ import itertools
 import time
 from threading import Barrier, Thread
 
-from loguru import logger
+from loggerex import logger
 
 
 class NonSafeSink:

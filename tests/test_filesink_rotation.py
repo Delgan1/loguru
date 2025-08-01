@@ -7,9 +7,9 @@ from unittest.mock import Mock
 
 import pytest
 
-import loguru
-from loguru import logger
-from loguru._ctime_functions import load_ctime_functions
+import loggerex
+from loggerex import logger
+from loggerex._ctime_functions import load_ctime_functions
 
 from .conftest import check_dir
 
@@ -760,8 +760,8 @@ def test_time_rotation_reopening_xattr_attributeerror(tmp_path_local, monkeypatc
         context.delattr(os, "getxattr")
         get_ctime, set_ctime = load_ctime_functions()
 
-        context.setattr(loguru._file_sink, "get_ctime", get_ctime)
-        context.setattr(loguru._file_sink, "set_ctime", set_ctime)
+        context.setattr(loggerex._file_sink, "get_ctime", get_ctime)
+        context.setattr(loggerex._file_sink, "set_ctime", set_ctime)
 
         filepath = tmp_path_local / "test.log"
         i = logger.add(filepath, format="{message}", delay=delay, rotation="2 s")
@@ -796,8 +796,8 @@ def test_time_rotation_reopening_xattr_oserror(tmp_path_local, monkeypatch, dela
         context.setattr(os, "getxattr", Mock(side_effect=OSError))
         get_ctime, set_ctime = load_ctime_functions()
 
-        context.setattr(loguru._file_sink, "get_ctime", get_ctime)
-        context.setattr(loguru._file_sink, "set_ctime", set_ctime)
+        context.setattr(loggerex._file_sink, "get_ctime", get_ctime)
+        context.setattr(loggerex._file_sink, "set_ctime", set_ctime)
 
         filepath = tmp_path_local / "test.log"
         i = logger.add(filepath, format="{message}", delay=delay, rotation="2 s")

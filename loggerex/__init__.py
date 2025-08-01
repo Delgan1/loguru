@@ -1,7 +1,7 @@
 """
 The Loguru library provides a pre-instanced logger to facilitate dealing with logging in Python.
 
-Just ``from loguru import logger``.
+Just ``from loggerex import logger``.
 """
 
 import atexit as _atexit
@@ -11,7 +11,7 @@ from . import _defaults
 from ._logger import Core as _Core
 from ._logger import Logger as _Logger
 
-__version__ = "0.7.3"
+__version__ = "0.7.4"
 
 __all__ = ["logger"]
 

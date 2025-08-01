@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 def test_using_multiprocessing_directly_if_context_is_none():

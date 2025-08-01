@@ -1,4 +1,4 @@
-from loguru import logger
+from loggerex import logger
 
 # See "test_catch_exceptions.py" for extended testing
 

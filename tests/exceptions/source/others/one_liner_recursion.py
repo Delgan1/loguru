@@ -1,5 +1,5 @@
 # fmt: off
-from loguru import logger
+from loggerex import logger
 
 import sys
 

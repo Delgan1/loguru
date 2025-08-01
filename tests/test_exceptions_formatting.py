@@ -8,7 +8,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 def normalize(exception):

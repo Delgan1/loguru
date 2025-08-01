@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from loguru import logger
-from loguru._colorama import should_colorize, should_wrap
+from loggerex import logger
+from loggerex._colorama import should_colorize, should_wrap
 
 from .conftest import (
     StreamFilenoException,

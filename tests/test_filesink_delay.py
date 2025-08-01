@@ -1,7 +1,7 @@
 import datetime
 import time
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import check_dir
 

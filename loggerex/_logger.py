@@ -72,7 +72,7 @@
 .. |better_exceptions| replace:: ``better_exceptions``
 .. _better_exceptions: https://github.com/Qix-/better-exceptions
 
-.. |loguru-config| replace:: ``loguru-config``
+.. |loggerex-config| replace:: ``loggerex-config``
 .. _loguru-config: https://github.com/erezinman/loguru-config
 
 .. _Pendulum: https://pendulum.eustace.io/docs/#tokens
@@ -237,7 +237,7 @@ class Core:
 class Logger:
     """An object to dispatch logging messages to configured handlers.
 
-    The |Logger| is the core object of ``loguru``, every logging configuration and usage pass
+    The |Logger| is the core object of ``loggerex``, every logging configuration and usage pass
     through a call to one of its methods. There is only one logger, so there is no need to retrieve
     one before usage.
 
@@ -254,7 +254,7 @@ class Logger:
     information about the logging context: time, function, file, line, thread, level... It also
     contains the ``__name__`` of the module, this is why you don't need named loggers.
 
-    You should not instantiate a |Logger| by yourself, use ``from loguru import logger`` instead.
+    You should not instantiate a |Logger| by yourself, use ``from loggerex import logger`` instead.
     """
 
     def __init__(self, core, exception, depth, record, lazy, colors, raw, capture, patchers, extra):
@@ -262,7 +262,7 @@ class Logger:
         self._options = (exception, depth, record, lazy, colors, raw, capture, patchers, extra)
 
     def __repr__(self):
-        return "<loguru.logger handlers=%r>" % list(self._core.handlers.values())
+        return "<loggerex.logger handlers=%r>" % list(self._core.handlers.values())
 
     def add(
         self,
@@ -1751,7 +1751,7 @@ class Logger:
         modules, so this is the best way to set overall default values.
 
         To load the configuration directly from a file, such as JSON or YAML, it is also possible to
-        use the |loguru-config|_ library developed by `@erezinman`_.
+        use the |loggerex-config|_ library developed by `@erezinman`_.
 
         Parameters
         ----------

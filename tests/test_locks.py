@@ -6,7 +6,7 @@ import time
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 class CyclicReference:

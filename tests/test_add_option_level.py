@@ -1,6 +1,6 @@
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 @pytest.mark.parametrize("level", [0, "TRACE", "INFO", 20])

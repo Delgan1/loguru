@@ -1,6 +1,6 @@
 import sys
 
-from loguru import logger
+from loggerex import logger
 
 logger.remove()
 logger.add(sys.stderr, format="{message}", diagnose=False, backtrace=False, colorize=False)

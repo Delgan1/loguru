@@ -1,7 +1,7 @@
 import sys
 from collections import namedtuple
 
-from loguru import logger
+from loggerex import logger
 
 logger.remove()
 logger.add(sys.stderr, format="", colorize=False, backtrace=True, diagnose=False)

@@ -66,7 +66,7 @@ The main concept of Loguru is that **there is one and only one** [`logger`](http
 For convenience, it is pre-configured and outputs to `stderr` to begin with (but that's entirely configurable).
 
 ```python
-from loguru import logger
+from loggerex import logger
 
 logger.debug("That's it, beautiful and simple logging!")
 ```

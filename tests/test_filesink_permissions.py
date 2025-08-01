@@ -3,7 +3,7 @@ from stat import S_IMODE
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 @pytest.fixture(scope="module", autouse=True)

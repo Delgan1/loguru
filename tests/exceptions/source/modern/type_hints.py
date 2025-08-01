@@ -2,7 +2,7 @@
 import sys
 from typing import TypeVar, Tuple
 
-from loguru import logger
+from loggerex import logger
 
 logger.remove()
 logger.add(sys.stderr, format="", colorize=True, backtrace=False, diagnose=True)

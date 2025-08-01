@@ -6,7 +6,7 @@ import pickle
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import parse
 

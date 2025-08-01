@@ -4,7 +4,7 @@ from logging import StreamHandler
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 from .conftest import make_logging_logger
 

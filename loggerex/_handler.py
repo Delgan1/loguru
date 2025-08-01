@@ -100,7 +100,7 @@ class Handler:
             self._queue_lock = create_handler_lock()
             self._owner_process_pid = os.getpid()
             self._thread = Thread(
-                target=self._queued_writer, daemon=True, name="loguru-writer-%d" % self._id
+                target=self._queued_writer, daemon=True, name="loggerex-writer-%d" % self._id
             )
             self._thread.start()
 

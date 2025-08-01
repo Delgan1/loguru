@@ -1,6 +1,6 @@
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 def test_bind_after_add(writer):

@@ -3,7 +3,7 @@ import os
 
 import pytest
 
-from loguru import logger
+from loggerex import logger
 
 
 @pytest.fixture

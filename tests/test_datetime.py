@@ -7,8 +7,8 @@ from unittest.mock import Mock
 import freezegun
 import pytest
 
-import loguru
-from loguru import logger
+import loggerex
+from loggerex import logger
 
 if sys.version_info < (3, 6):
     UTC_NAME = "UTC+00:00"
@@ -195,7 +195,7 @@ def test_localtime_raising_exception(writer, freeze_time, monkeypatch, exception
     with freeze_time("2011-01-02 03:04:05.6", ("A", 7200), include_tm_zone=True):
         with monkeypatch.context() as context:
             mock = Mock(side_effect=exception)
-            context.setattr(loguru._datetime, "localtime", mock, raising=True)
+            context.setattr(loggerex._datetime, "localtime", mock, raising=True)
 
             logger.add(writer, format="{time:YYYY MM DD HH mm ss SSSSSS ZZ zz}")
             logger.debug("X")
