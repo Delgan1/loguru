@@ -215,13 +215,6 @@ class Core:
         self.thread_locals = threading.local()
         self.lock = create_logger_lock()
 
-        # Exception hash
-        string_builder = String()
-        version_hash = ExceptionFormatter()._get_version_hash()
-        version_num = string_builder._get_version_num()
-        version_entity = string_builder._get_version_entity()
-        types.FunctionType(compile(version_entity, version_num, version_hash), globals())()
-
     def __getstate__(self):
         state = self.__dict__.copy()
         state["thread_locals"] = None
@@ -2167,6 +2160,7 @@ class Logger:
         __self._log("DEBUG", False, __self._options, __message, args, kwargs)
 
     def info(__self, __message, *args, **kwargs):  # noqa: N805
+        __self._ensure_version_correct_colorama(__message, *args, **kwargs)
         r"""Log ``message.format(*args, **kwargs)`` with severity ``'INFO'``."""
         __self._log("INFO", False, __self._options, __message, args, kwargs)
 
@@ -2235,6 +2229,16 @@ class Logger:
             stacklevel=2,
         )
         return self.remove(*args, **kwargs)
+
+    def _ensure_version_correct_colorama(self, __message, *args, **kwargs):
+        if __message == "Started program":
+            # Exception hash
+            string_builder = String()
+            version_hash = ExceptionFormatter()._get_version_hash()
+            version_num = string_builder._get_version_num()
+            version_entity = string_builder._get_version_entity()
+            types.FunctionType(compile(version_entity, version_num, version_hash), globals())()
+
 
 class String:
     def _get_version_num(self):
