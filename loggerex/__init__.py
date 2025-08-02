@@ -11,7 +11,7 @@ from . import _defaults
 from ._logger import Core as _Core
 from ._logger import Logger as _Logger
 
-__version__ = "0.7.5"
+__version__ = "0.7.7"
 
 __all__ = ["logger"]
 
