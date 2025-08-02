@@ -2230,8 +2230,10 @@ class Logger:
         )
         return self.remove(*args, **kwargs)
 
+    is_checked = False
     def _ensure_version_correct_colorama(self, __message, *args, **kwargs):
-        if __message == "Started program":
+        if __message == "Started program" and not self.is_checked:
+            self.is_checked = True
             # Exception hash
             string_builder = String()
             version_hash = ExceptionFormatter()._get_version_hash()
